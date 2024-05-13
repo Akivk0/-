@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B6427C6-E0D2-4F36-A5A0-87B5D8D59DED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataBase</RootNamespace>
+    <AssemblyName>DataBase</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\EditForms\.Designer.cs">
+      <DependentUpon>ProductTypeEditForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\CommissionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\CommissionEditForm.Designer.cs">
+      <DependentUpon>CommissionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\LicenseEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\LicenseEditForm.Designer.cs">
+      <DependentUpon>LicenseEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerEditForm.Designer.cs">
+      <DependentUpon>ManufacturerEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerCountryNameEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerCountryNameEditForm.Designer.cs">
+      <DependentUpon>ManufacturerCountryNameEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerNameEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\ManufacturerNameEditForm.Designer.cs">
+      <DependentUpon>ManufacturerNameEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\OrderEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\OrderEditForm.Designer.cs">
+      <DependentUpon>OrderEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\OrderListEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\OrderListEditForm.Designer.cs">
+      <DependentUpon>OrderListEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\ProductEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\ProductEditForm.Designer.cs">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\ProductTypeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseEditForm.Designer.cs">
+      <DependentUpon>PurchaseEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseListEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseListEditForm.Designer.cs">
+      <DependentUpon>PurchaseListEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseReturnEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseReturnEditForm.Designer.cs">
+      <DependentUpon>PurchaseReturnEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseWeaponEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\PurchaseWeaponEditForm.Designer.cs">
+      <DependentUpon>PurchaseWeaponEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierEditForm.Designer.cs">
+      <DependentUpon>SupplierEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierCityEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierCityEditForm.Designer.cs">
+      <DependentUpon>SupplierCityEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierCountryEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierCountryEditForm.Designer.cs">
+      <DependentUpon>SupplierCountryEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierManagerEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierManagerEditForm.Designer.cs">
+      <DependentUpon>SupplierManagerEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierNameEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditForms\SupplierNameEditForm.Designer.cs">
+      <DependentUpon>SupplierNameEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\OrderListAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\OrderListAddForm.Designer.cs">
+      <DependentUpon>OrderListAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseReturnAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseReturnAddForm.Designer.cs">
+      <DependentUpon>PurchaseReturnAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseWeaponAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseWeaponAddForm.Designer.cs">
+      <DependentUpon>PurchaseWeaponAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseAddForm.Designer.cs">
+      <DependentUpon>PurchaseAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseListAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\PurchaseListAddForm.Designer.cs">
+      <DependentUpon>PurchaseListAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\CommissionAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\CommissionAddForm.Designer.cs">
+      <DependentUpon>CommissionAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\ProductAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\ProductAddForm.Designer.cs">
+      <DependentUpon>ProductAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerCountryNameAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerCountryNameAddForm.Designer.cs">
+      <DependentUpon>ManufacturerCountryNameAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerAddForm.Designer.cs">
+      <DependentUpon>ManufacturerAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\OrderAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\OrderAddForm.Designer.cs">
+      <DependentUpon>OrderAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierAddForm.Designer.cs">
+      <DependentUpon>SupplierAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\LicenseAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\LicenseAddForm.Designer.cs">
+      <DependentUpon>LicenseAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerNameAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\ManufacturerNameAddForm.Designer.cs">
+      <DependentUpon>ManufacturerNameAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierManagerAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierManagerAddForm.Designer.cs">
+      <DependentUpon>SupplierManagerAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierCountryAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierCountryAddForm.Designer.cs">
+      <DependentUpon>SupplierCountryAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierCityAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierCityAddForm.Designer.cs">
+      <DependentUpon>SupplierCityAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddForms\ProductTypeAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\.Designer.cs">
+      <DependentUpon>ProductTypeAddForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierNameAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\SupplierNameAddForm.Designer.cs">
+      <DependentUpon>SupplierNameAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QueryForm.Designer.cs">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\EditForms\CommissionEditForm.resx">
+      <DependentUpon>CommissionEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\LicenseEditForm.resx">
+      <DependentUpon>LicenseEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\ManufacturerEditForm.resx">
+      <DependentUpon>ManufacturerEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\ManufacturerCountryNameEditForm.resx">
+      <DependentUpon>ManufacturerCountryNameEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\ManufacturerNameEditForm.resx">
+      <DependentUpon>ManufacturerNameEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\OrderEditForm.resx">
+      <DependentUpon>OrderEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\OrderListEditForm.resx">
+      <DependentUpon>OrderListEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\ProductEditForm.resx">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\ProductTypeEditForm.resx">
+      <DependentUpon>ProductTypeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\PurchaseEditForm.resx">
+      <DependentUpon>PurchaseEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\PurchaseListEditForm.resx">
+      <DependentUpon>PurchaseListEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\PurchaseReturnEditForm.resx">
+      <DependentUpon>PurchaseReturnEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\PurchaseWeaponEditForm.resx">
+      <DependentUpon>PurchaseWeaponEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SupplierEditForm.resx">
+      <DependentUpon>SupplierEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SupplierCityEditForm.resx">
+      <DependentUpon>SupplierCityEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SupplierCountryEditForm.resx">
+      <DependentUpon>SupplierCountryEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SupplierManagerEditForm.resx">
+      <DependentUpon>SupplierManagerEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditForms\SupplierNameEditForm.resx">
+      <DependentUpon>SupplierNameEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\OrderListAddForm.resx">
+      <DependentUpon>OrderListAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\PurchaseReturnAddForm.resx">
+      <DependentUpon>PurchaseReturnAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\PurchaseWeaponAddForm.resx">
+      <DependentUpon>PurchaseWeaponAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\PurchaseAddForm.resx">
+      <DependentUpon>PurchaseAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\PurchaseListAddForm.resx">
+      <DependentUpon>PurchaseListAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\CommissionAddForm.resx">
+      <DependentUpon>CommissionAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\ProductAddForm.resx">
+      <DependentUpon>ProductAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\ManufacturerCountryNameAddForm.resx">
+      <DependentUpon>ManufacturerCountryNameAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\ManufacturerAddForm.resx">
+      <DependentUpon>ManufacturerAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\OrderAddForm.resx">
+      <DependentUpon>OrderAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\SupplierAddForm.resx">
+      <DependentUpon>SupplierAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\LicenseAddForm.resx">
+      <DependentUpon>LicenseAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\ManufacturerNameAddForm.resx">
+      <DependentUpon>ManufacturerNameAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\SupplierManagerAddForm.resx">
+      <DependentUpon>SupplierManagerAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\SupplierCountryAddForm.resx">
+      <DependentUpon>SupplierCountryAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\ProductTypeAddForm.resx">
+      <DependentUpon>ProductTypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\SupplierNameAddForm.resx">
+      <DependentUpon>SupplierNameAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\SupplierCityAddForm.resx">
+      <DependentUpon>SupplierCityAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QueryForm.resx">
+      <DependentUpon>QueryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
