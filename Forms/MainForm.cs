@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DataBase
@@ -37,7 +38,7 @@ namespace DataBase
                 }
             }
             label1.Dispose();
-            return maxWidth;
+            return maxWidth+200;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -93,6 +94,9 @@ namespace DataBase
                 "продажи по каждому товару",
                 "продажи по каждому типу",
                 "продажи по каждому производителю",
+                "сумма каждого заказа",
+                "сумма каждой покупки",
+                "сумма возвратов",
                 "сумма возвратов",
                 "сумма заказов"
             };
@@ -311,6 +315,7 @@ namespace DataBase
             }
 
             addForm.Owner = this;
+            addForm.Font = new Font("Microsoft Sans Serif", 12);
             addForm.ShowDialog();
             PrintMainTable();
         }
@@ -448,6 +453,7 @@ namespace DataBase
             }
 
             editForm.Owner = this;
+            editForm.Font = new Font("Microsoft Sans Serif", 12);
             editForm.ShowDialog();
             PrintMainTable();
         }
