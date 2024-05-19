@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.buttonAddNameFabricator = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxPurch = new System.Windows.Forms.ComboBox();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
+            this.textBoxAmount = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -45,13 +46,6 @@
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер покупки";
-            // 
-            // textBoxAmount
-            // 
-            this.textBoxAmount.Location = new System.Drawing.Point(149, 83);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAmount.TabIndex = 1;
             // 
             // buttonAddNameFabricator
             // 
@@ -86,7 +80,7 @@
             this.comboBoxPurch.FormattingEnabled = true;
             this.comboBoxPurch.Location = new System.Drawing.Point(149, 29);
             this.comboBoxPurch.Name = "comboBoxPurch";
-            this.comboBoxPurch.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxPurch.Size = new System.Drawing.Size(120, 21);
             this.comboBoxPurch.TabIndex = 9;
             // 
             // comboBoxProduct
@@ -94,25 +88,43 @@
             this.comboBoxProduct.FormattingEnabled = true;
             this.comboBoxProduct.Location = new System.Drawing.Point(149, 56);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxProduct.Size = new System.Drawing.Size(120, 21);
             this.comboBoxProduct.TabIndex = 10;
+            // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxAmount.Location = new System.Drawing.Point(149, 83);
+            this.textBoxAmount.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(120, 20);
+            this.textBoxAmount.TabIndex = 35;
             // 
             // PurchaseListAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 142);
+            this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.comboBoxPurch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAddNameFabricator);
-            this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PurchaseListAddForm";
             this.Text = "Добавление перечня покупки";
             this.Load += new System.EventHandler(this.PurchaseListAddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,11 +133,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAmount;
         private System.Windows.Forms.Button buttonAddNameFabricator;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxPurch;
         private System.Windows.Forms.ComboBox comboBoxProduct;
+        private System.Windows.Forms.NumericUpDown textBoxAmount;
     }
 }

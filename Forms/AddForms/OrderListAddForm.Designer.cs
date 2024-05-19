@@ -33,10 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.comboBoxOrder = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxAmount = new System.Windows.Forms.NumericUpDown();
+            this.textBoxPrice = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,20 +86,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Код товара";
             // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(149, 42);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
-            this.textBoxPrice.TabIndex = 12;
-            // 
-            // textBoxAmount
-            // 
-            this.textBoxAmount.Location = new System.Drawing.Point(149, 69);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(121, 20);
-            this.textBoxAmount.TabIndex = 13;
-            // 
             // comboBoxOrder
             // 
             this.comboBoxOrder.FormattingEnabled = true;
@@ -115,15 +103,49 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Код поставки";
             // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxAmount.Location = new System.Drawing.Point(149, 69);
+            this.textBoxAmount.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(120, 20);
+            this.textBoxAmount.TabIndex = 31;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxPrice.Location = new System.Drawing.Point(150, 39);
+            this.textBoxPrice.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(120, 20);
+            this.textBoxPrice.TabIndex = 32;
+            // 
             // OrderListAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 157);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxOrder);
-            this.Controls.Add(this.textBoxAmount);
-            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -133,6 +155,8 @@
             this.Name = "OrderListAddForm";
             this.Text = "Добавление печня заказа";
             this.Load += new System.EventHandler(this.SupplierCountryAddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,9 +169,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.TextBox textBoxAmount;
         private System.Windows.Forms.ComboBox comboBoxOrder;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown textBoxAmount;
+        private System.Windows.Forms.NumericUpDown textBoxPrice;
     }
 }

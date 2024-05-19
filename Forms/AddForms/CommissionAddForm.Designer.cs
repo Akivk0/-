@@ -36,7 +36,6 @@
             this.textBoxWeapon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,6 +44,8 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxPatronymic = new System.Windows.Forms.TextBox();
             this.textBoxPassport = new System.Windows.Forms.TextBox();
+            this.textBoxPrice = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,13 +119,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Когда приняли";
             // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(149, 106);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
-            this.textBoxPrice.TabIndex = 18;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -188,11 +182,24 @@
             this.textBoxPassport.Size = new System.Drawing.Size(121, 20);
             this.textBoxPassport.TabIndex = 27;
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(149, 108);
+            this.textBoxPrice.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(120, 20);
+            this.textBoxPrice.TabIndex = 28;
+            // 
             // CommissionAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 286);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.textBoxPassport);
             this.Controls.Add(this.textBoxPatronymic);
             this.Controls.Add(this.textBoxName);
@@ -200,7 +207,6 @@
             this.Controls.Add(this.comboBoxCode);
             this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxWeapon);
@@ -214,6 +220,7 @@
             this.Name = "CommissionAddForm";
             this.Text = "Добавление комиссионного оружия";
             this.Load += new System.EventHandler(this.CommissionAddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,7 +236,6 @@
         private System.Windows.Forms.TextBox textBoxWeapon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.Label label8;
@@ -238,5 +244,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxPatronymic;
         private System.Windows.Forms.TextBox textBoxPassport;
+        private System.Windows.Forms.NumericUpDown textBoxPrice;
     }
 }

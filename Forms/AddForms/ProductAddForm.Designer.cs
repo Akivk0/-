@@ -37,14 +37,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxShelf = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxStorage = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxManuf = new System.Windows.Forms.ComboBox();
             this.maskedTextBoxDate = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPrice = new System.Windows.Forms.NumericUpDown();
+            this.textBoxShelf = new System.Windows.Forms.NumericUpDown();
+            this.textBoxStorage = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxShelf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStorage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,13 +127,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Наименование";
             // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(149, 80);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
-            this.textBoxPrice.TabIndex = 16;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -140,13 +136,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Цена";
             // 
-            // textBoxShelf
-            // 
-            this.textBoxShelf.Location = new System.Drawing.Point(149, 106);
-            this.textBoxShelf.Name = "textBoxShelf";
-            this.textBoxShelf.Size = new System.Drawing.Size(121, 20);
-            this.textBoxShelf.TabIndex = 18;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -155,13 +144,6 @@
             this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Номер стелажа";
-            // 
-            // textBoxStorage
-            // 
-            this.textBoxStorage.Location = new System.Drawing.Point(149, 132);
-            this.textBoxStorage.Name = "textBoxStorage";
-            this.textBoxStorage.Size = new System.Drawing.Size(121, 20);
-            this.textBoxStorage.TabIndex = 20;
             // 
             // label8
             // 
@@ -189,18 +171,69 @@
             this.maskedTextBoxDate.TabIndex = 22;
             this.maskedTextBoxDate.ValidatingType = typeof(System.DateTime);
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxPrice.Location = new System.Drawing.Point(150, 82);
+            this.textBoxPrice.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(120, 20);
+            this.textBoxPrice.TabIndex = 32;
+            // 
+            // textBoxShelf
+            // 
+            this.textBoxShelf.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxShelf.Location = new System.Drawing.Point(150, 106);
+            this.textBoxShelf.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.textBoxShelf.Name = "textBoxShelf";
+            this.textBoxShelf.Size = new System.Drawing.Size(120, 20);
+            this.textBoxShelf.TabIndex = 33;
+            // 
+            // textBoxStorage
+            // 
+            this.textBoxStorage.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxStorage.Location = new System.Drawing.Point(150, 133);
+            this.textBoxStorage.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.textBoxStorage.Name = "textBoxStorage";
+            this.textBoxStorage.Size = new System.Drawing.Size(120, 20);
+            this.textBoxStorage.TabIndex = 34;
+            // 
             // ProductAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 286);
+            this.Controls.Add(this.textBoxStorage);
+            this.Controls.Add(this.textBoxShelf);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.maskedTextBoxDate);
             this.Controls.Add(this.comboBoxManuf);
-            this.Controls.Add(this.textBoxStorage);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxShelf);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label5);
@@ -215,6 +248,9 @@
             this.Name = "ProductAddForm";
             this.Text = "Добавление производителя";
             this.Load += new System.EventHandler(this.SupplierCountryAddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxShelf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStorage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,13 +267,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxShelf;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxStorage;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxManuf;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDate;
+        private System.Windows.Forms.NumericUpDown textBoxPrice;
+        private System.Windows.Forms.NumericUpDown textBoxShelf;
+        private System.Windows.Forms.NumericUpDown textBoxStorage;
     }
 }

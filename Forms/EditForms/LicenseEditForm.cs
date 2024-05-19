@@ -14,7 +14,6 @@ namespace DataBase.Forms.EditForms
     public partial class LicenseEditForm : Form
     {
         int code;
-        public int licenseNumber;
         public string surname;
         public string name;
         public string patronymic;
@@ -31,7 +30,7 @@ namespace DataBase.Forms.EditForms
         {
             MainForm main = this.Owner as MainForm;
 
-            textBoxLicenseNumber.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString();
+          
             textBoxSurname.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[1].Value.ToString();
             textBoxName.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[2].Value.ToString();
             textBoxPatronymic.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[3].Value.ToString();
@@ -49,8 +48,8 @@ namespace DataBase.Forms.EditForms
             {
                 connection.Open();
 
-                if (String.IsNullOrEmpty(textBoxLicenseNumber.Text) 
-                    || String.IsNullOrEmpty(textBoxSurname.Text)
+                if (
+                    String.IsNullOrEmpty(textBoxSurname.Text)
                     || String.IsNullOrEmpty(textBoxName.Text)
                     || String.IsNullOrEmpty(textBoxPassport.Text)
                     || String.IsNullOrEmpty(maskedTextBoxDateOfIssue.Text)
@@ -62,7 +61,6 @@ namespace DataBase.Forms.EditForms
                 }
 
                 code = Convert.ToInt32(main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString());
-                licenseNumber = Convert.ToInt32(textBoxLicenseNumber.Text);
                 surname = textBoxSurname.Text.ToString();
                 name = textBoxName.Text.ToString();
                 patronymic = textBoxPatronymic.Text.ToString();
@@ -72,7 +70,6 @@ namespace DataBase.Forms.EditForms
 
             
                 string query = $"UPDATE [{main.activeTable}] SET" +
-                    "[Номер лицензии] = " + licenseNumber + "," +
                     "[Фамилия] ='" + surname + "'," +
                     "[Имя] ='" + name + "'," +
                     "[Отчество] ='" + patronymic + "'," +

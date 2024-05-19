@@ -9,14 +9,13 @@ namespace DataBase.Forms.EditForms
     public partial class CommissionEditForm : Form
     {
         public int codeTable;
-        public int code;
         public string weaponNumber;
         public DateTime date;
         public int price;
         public string surname;
         public string name;
         public string patronymic;
-        public string passport;
+        public int passport;
 
 
         public CommissionEditForm()
@@ -30,34 +29,7 @@ namespace DataBase.Forms.EditForms
 
             using (OleDbConnection connection = new OleDbConnection(main.connectionString))
             {
-                try
-                {
-                    connection.Open();
 
-                    List<string> tables = new List<string>
-                    {
-                        "Товары"
-                    };
-
-                    OleDbCommand dbCommand = new OleDbCommand($"SELECT * FROM [{tables[0]}]", connection);
-                    OleDbDataReader dbReader = dbCommand.ExecuteReader();
-                    while (dbReader.Read())
-                    {
-                        comboBoxCode.Items.Add($"{dbReader[0]}");
-                    }
-
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Сообщение: {ex.Message}", "Ошибка!");
-                }
-                finally
-                {
-                    connection.Close();
-                }
-
-                comboBoxCode.SelectedItem = main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString();
                 textBoxWeapon.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[1].Value.ToString();
                 maskedTextBoxDate.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[2].Value.ToString();
                 textBoxPrice.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[3].Value.ToString();
@@ -84,7 +56,7 @@ namespace DataBase.Forms.EditForms
             {
                 connection.Open();
 
-                if (comboBoxCode.SelectedIndex == -1 ||
+                if (
                     textBoxWeapon.Text == "" ||
                     maskedTextBoxDate.Text == "" ||
                     textBoxPrice.Text == "" ||
@@ -99,18 +71,16 @@ namespace DataBase.Forms.EditForms
                 }
 
                 codeTable = Convert.ToInt32(main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString());
-                code = Convert.ToInt32(comboBoxCode.Text.ToString());
                 weaponNumber = textBoxWeapon.Text.ToString();
                 date = Convert.ToDateTime(maskedTextBoxDate.Text.ToString());
                 price = Convert.ToInt32(textBoxPrice.Text.ToString());
                 surname = textBoxSurname.Text.ToString();
                 name = textBoxName.Text.ToString();
                 patronymic = textBoxPatronymic.Text.ToString();
-                passport = textBoxPassport.Text.ToString();
+                passport = Convert.ToInt32(textBoxPassport.Text.ToString());
 
                 string query = $"UPDATE [{main.activeTable}] SET" +
-                   "[Код товара] = " + code + "," +
-                   "[Номер оружия] =" + weaponNumber + "," +
+                   "[Номер оружия] ='" + weaponNumber + "'," +
                    "[Когда приняли] ='" + date + "'," +
                    "[Стоимость покупки] =" + price + "," +
                    "[Фамилия] ='" + surname + "'," +

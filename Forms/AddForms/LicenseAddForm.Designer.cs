@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLicenseNumber = new System.Windows.Forms.TextBox();
             this.buttonAddNameFabricator = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
@@ -37,12 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxPassport = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxDateOfIssue = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.maskedTextBoxExpiration = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPassport = new System.Windows.Forms.NumericUpDown();
+            this.textBoxLicenseNumber = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPassport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxLicenseNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,13 +55,6 @@
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Номер лицензии";
-            // 
-            // textBoxLicenseNumber
-            // 
-            this.textBoxLicenseNumber.Location = new System.Drawing.Point(149, 31);
-            this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
-            this.textBoxLicenseNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLicenseNumber.TabIndex = 1;
             // 
             // buttonAddNameFabricator
             // 
@@ -84,14 +79,14 @@
             // 
             this.textBoxSurname.Location = new System.Drawing.Point(149, 60);
             this.textBoxSurname.Name = "textBoxSurname";
-            this.textBoxSurname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSurname.Size = new System.Drawing.Size(120, 20);
             this.textBoxSurname.TabIndex = 4;
             // 
             // textBoxPatronymic
             // 
             this.textBoxPatronymic.Location = new System.Drawing.Point(149, 115);
             this.textBoxPatronymic.Name = "textBoxPatronymic";
-            this.textBoxPatronymic.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPatronymic.Size = new System.Drawing.Size(120, 20);
             this.textBoxPatronymic.TabIndex = 8;
             // 
             // label3
@@ -107,7 +102,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(149, 86);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.Size = new System.Drawing.Size(120, 20);
             this.textBoxName.TabIndex = 6;
             // 
             // label4
@@ -118,13 +113,6 @@
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Имя";
-            // 
-            // textBoxPassport
-            // 
-            this.textBoxPassport.Location = new System.Drawing.Point(149, 141);
-            this.textBoxPassport.Name = "textBoxPassport";
-            this.textBoxPassport.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPassport.TabIndex = 10;
             // 
             // label5
             // 
@@ -140,7 +128,7 @@
             this.maskedTextBoxDateOfIssue.Location = new System.Drawing.Point(149, 167);
             this.maskedTextBoxDateOfIssue.Mask = "00/00/0000";
             this.maskedTextBoxDateOfIssue.Name = "maskedTextBoxDateOfIssue";
-            this.maskedTextBoxDateOfIssue.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxDateOfIssue.Size = new System.Drawing.Size(120, 20);
             this.maskedTextBoxDateOfIssue.TabIndex = 11;
             this.maskedTextBoxDateOfIssue.ValidatingType = typeof(System.DateTime);
             // 
@@ -167,20 +155,55 @@
             this.maskedTextBoxExpiration.Location = new System.Drawing.Point(149, 193);
             this.maskedTextBoxExpiration.Mask = "00/00/0000";
             this.maskedTextBoxExpiration.Name = "maskedTextBoxExpiration";
-            this.maskedTextBoxExpiration.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxExpiration.Size = new System.Drawing.Size(120, 20);
             this.maskedTextBoxExpiration.TabIndex = 13;
             this.maskedTextBoxExpiration.ValidatingType = typeof(System.DateTime);
+            // 
+            // textBoxPassport
+            // 
+            this.textBoxPassport.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxPassport.Location = new System.Drawing.Point(149, 141);
+            this.textBoxPassport.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.textBoxPassport.Name = "textBoxPassport";
+            this.textBoxPassport.Size = new System.Drawing.Size(120, 20);
+            this.textBoxPassport.TabIndex = 29;
+            // 
+            // textBoxLicenseNumber
+            // 
+            this.textBoxLicenseNumber.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.textBoxLicenseNumber.Location = new System.Drawing.Point(149, 32);
+            this.textBoxLicenseNumber.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.textBoxLicenseNumber.Name = "textBoxLicenseNumber";
+            this.textBoxLicenseNumber.Size = new System.Drawing.Size(120, 20);
+            this.textBoxLicenseNumber.TabIndex = 30;
             // 
             // LicenseAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 270);
+            this.Controls.Add(this.textBoxLicenseNumber);
+            this.Controls.Add(this.textBoxPassport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.maskedTextBoxExpiration);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.maskedTextBoxDateOfIssue);
-            this.Controls.Add(this.textBoxPassport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxPatronymic);
             this.Controls.Add(this.label3);
@@ -189,11 +212,12 @@
             this.Controls.Add(this.textBoxSurname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAddNameFabricator);
-            this.Controls.Add(this.textBoxLicenseNumber);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LicenseAddForm";
             this.Text = "Добавление названия поставщика";
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPassport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxLicenseNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxLicenseNumber;
         private System.Windows.Forms.Button buttonAddNameFabricator;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxSurname;
@@ -210,11 +233,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxPassport;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDateOfIssue;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxExpiration;
+        private System.Windows.Forms.NumericUpDown textBoxPassport;
+        private System.Windows.Forms.NumericUpDown textBoxLicenseNumber;
     }
 }

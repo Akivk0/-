@@ -71,7 +71,6 @@ namespace DataBase
                 "поиск товара по артикулу",
                 "поиск поставщиков по стране",
                 "поиск производителя по типу товара",
-                "поиск менеджера поставщика",
                 "стеллаж комиссионного оружия",
                 "количество покупок оружия",
                 "выбор всех заказов с датой после определенного периода",
@@ -81,7 +80,6 @@ namespace DataBase
                 "выбор всех заказов, содержащих определенный товар",
                 "самый продаваемый товар",
                 "выбор всех товаров, которых осталось меньше N единиц на складе",
-                "ежемесячные траты",
                 "выбор всех покупок с датой, попадающей в определенный период",
                 "количество товаров каждого производителя",
                 "количество товаров каждого типа",
@@ -355,6 +353,10 @@ namespace DataBase
                         query += $"[{mainDataBaseGrid.Columns[0].HeaderText}] = {{" + $"{(mainDataBaseGrid.SelectedRows[0].Cells[0].Value)}" + $"}}" +
                         $"AND" +
                         $"[{mainDataBaseGrid.Columns[1].HeaderText}] = " + $"{(mainDataBaseGrid.SelectedRows[0].Cells[1].Value)}" + $"";
+                        break;
+
+                    case "Лицензии на приобретение":
+                        query += $"[{mainDataBaseGrid.Columns[0].HeaderText}] = " + $"{(mainDataBaseGrid.SelectedRows[0].Cells[0].Value)}" + $"";
                         break;
 
                     default:

@@ -9,7 +9,6 @@ namespace DataBase.Forms.AddForms
     public partial class ProductEditForm : Form
     {
         public int codeTable;
-        public int code;
         public string name;
         public int price;
         public int shelf;
@@ -78,7 +77,7 @@ namespace DataBase.Forms.AddForms
                     connection.Close();
                 }
 
-                textBoxCode.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString();
+             
                 textBoxName.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[1].Value.ToString();
                 textBoxPrice.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[2].Value.ToString();
                 textBoxShelf.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[3].Value.ToString();
@@ -106,7 +105,7 @@ namespace DataBase.Forms.AddForms
             {
                 connection.Open();
 
-                if (textBoxCode.Text == "" ||
+                if (
                     textBoxName.Text == "" ||
                     textBoxPrice.Text == "" ||
                     textBoxShelf.Text == "" ||
@@ -121,7 +120,6 @@ namespace DataBase.Forms.AddForms
                 }
 
                 codeTable = Convert.ToInt32(main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString());
-                code = Convert.ToInt32(textBoxCode.Text.ToString());
                 name = textBoxName.Text.ToString();
                 price = Convert.ToInt32(textBoxPrice.Text.ToString());
                 shelf = Convert.ToInt16(textBoxShelf.Text.ToString());
@@ -130,20 +128,7 @@ namespace DataBase.Forms.AddForms
                 type = codesType[comboBoxType.SelectedIndex];
                 manuf = codesManufacturer[comboBoxManuf.SelectedIndex];
 
-                string q1uery = $"INSERT INTO [{main.activeTable}] " +
-                   $"VALUES (" +
-                   "" + code + "," +
-                   "'" + name + "'," +
-                   "" + price + "," +
-                   "" + shelf + "," +
-                   "" + storage + "," +
-                   "'" + date + "'," +
-                   "{" + type + "}," +
-                   "{" + manuf + "}" +
-                   ")";
-
                 string query = $"UPDATE [{main.activeTable}] SET" +
-                   "[Код товара] = " + code + "," +
                    "[Наименование] ='" + name + "'," +
                    "[Цена] =" + price + "," +
                    "[Номер стеллажа/сейфа] =" + shelf + "," +

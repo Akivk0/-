@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace DataBase.Forms.AddForms
 {
     public partial class PurchaseReturnEditForm : Form
     {
-        public Guid code;
+        public Guid codeTable;
         public string surname;
-        public string supplier;
+        public string name;
         public string patronymic;
         public string reasonReturn;
 
@@ -24,34 +27,10 @@ namespace DataBase.Forms.AddForms
 
             MainForm main = this.Owner as MainForm;
 
-            using (OleDbConnection connection = new OleDbConnection(main.connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    List<string> tables = new List<string>
-                    {
-                        "Покупки"
-                    };
-
-                    OleDbCommand dbCommand = new OleDbCommand($"SELECT * FROM [{tables[0]}]", connection);
-                    OleDbDataReader dbReader = dbCommand.ExecuteReader();
-                    while (dbReader.Read())
-                    {
-                        comboBoxPurch.Items.Add($"{dbReader[0]}");
-                    }
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Сообщение: {ex.Message}", "Ошибка!");
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
+            textBoxSurname.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxName.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxPatronymic.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[3].Value.ToString();
+            richTextBoxReturn.Text = main.mainDataBaseGrid.SelectedRows[0].Cells[4].Value.ToString();
 
             foreach (Control ctrl in this.Controls)
             {
@@ -71,7 +50,7 @@ namespace DataBase.Forms.AddForms
             {
                 connection.Open();
 
-                if (String.IsNullOrEmpty(comboBoxPurch.Text) ||
+                if (
                     String.IsNullOrEmpty(textBoxSurname.Text) ||
                     String.IsNullOrEmpty(textBoxName.Text) ||
                     String.IsNullOrEmpty(textBoxPatronymic.Text) ||
@@ -81,20 +60,18 @@ namespace DataBase.Forms.AddForms
                     return;
                 }
 
-                code = Guid.Parse(comboBoxPurch.Text.ToString());
+                codeTable = Guid.Parse(main.mainDataBaseGrid.SelectedRows[0].Cells[0].Value.ToString());
                 surname = textBoxSurname.Text.ToString();
-                supplier = textBoxName.Text.ToString();
+                name = textBoxName.Text.ToString();
                 patronymic = textBoxPatronymic.Text.ToString();
                 reasonReturn = richTextBoxReturn.Text.ToString();
 
-                string query = $"INSERT INTO [{main.activeTable}] " +
-                    $"VALUES (" +
-                    "'" + surname + "'," +
-                    "'" + supplier + "'," +
-                    "'" + patronymic + "'," +
-                    "'" + reasonReturn + "'," +
-                    "{" + code + "}" +
-                    ")";
+                string query = $"UPDATE [{main.activeTable}] SET" +
+                   "[Фамилия] ='" + surname + "'," +
+                   "[Имя] ='" + name + "'," +
+                   "[Отчество] ='" + patronymic + "'," +
+                   "[Причина возварта] ='" + reasonReturn + "'" +
+                   "WHERE [Номер покупки] =" + "{" + codeTable + "}";
 
                 OleDbCommand dbCommand = new OleDbCommand(query, connection);
 
