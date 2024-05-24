@@ -11,6 +11,8 @@ namespace DataBase.Forms.AddForms
         public int amount;
         public int codeProduct;
 
+
+        private List<int> productCodes = new List<int>();
         private List<Guid> codesPurchase = new List<Guid>();
 
         public PurchaseListAddForm()
@@ -39,14 +41,17 @@ namespace DataBase.Forms.AddForms
                     OleDbDataReader dbReader = dbCommand.ExecuteReader();
                     while (dbReader.Read())
                     {
+                        
                         comboBoxPurch.Items.Add($"{dbReader[0]}");
+
                     }
 
                     dbCommand = new OleDbCommand($"SELECT * FROM [{tables[1]}]", connection);
                     dbReader = dbCommand.ExecuteReader();
                     while (dbReader.Read())
                     {
-                        comboBoxProduct.Items.Add($"{dbReader[0]}");
+                        productCodes.Add(Convert.ToInt32($"{dbReader[0]}"));
+                        comboBoxProduct.Items.Add($"{dbReader[0]} {dbReader[1]}");
                     }
                 }
 
@@ -87,7 +92,7 @@ namespace DataBase.Forms.AddForms
 
                 code = Guid.Parse(comboBoxPurch.Text.ToString());
                 amount = Convert.ToInt16(textBoxAmount.Text.ToString());
-                codeProduct = Convert.ToInt32(comboBoxProduct.Text.ToString());
+                codeProduct = Convert.ToInt32(productCodes[comboBoxProduct.SelectedIndex]);
 
                 string query = $"INSERT INTO [{main.activeTable}] " +
                     $"VALUES (" +

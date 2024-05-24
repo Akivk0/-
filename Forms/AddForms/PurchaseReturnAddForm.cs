@@ -39,6 +39,7 @@ namespace DataBase.Forms.AddForms
                     OleDbDataReader dbReader = dbCommand.ExecuteReader();
                     while (dbReader.Read())
                     {
+
                         comboBoxPurch.Items.Add($"{dbReader[0]}");
                     }
                 }

@@ -15,6 +15,8 @@ namespace DataBase.Forms.AddForms
         public int productAmount;
         public Guid orderCode;
 
+        private List<int> productCodes = new List<int>();
+
         public OrderListAddForm()
         {
             InitializeComponent();
@@ -40,7 +42,8 @@ namespace DataBase.Forms.AddForms
                     OleDbDataReader dbReader = dbCommand.ExecuteReader();
                     while (dbReader.Read())
                     {
-                        comboBoxProduct.Items.Add($"{dbReader[0]}");
+                        productCodes.Add(Convert.ToInt32($"{dbReader[0]}"));
+                        comboBoxProduct.Items.Add($"{dbReader[0]} {dbReader[1]}");
                     }
 
                     dbCommand = new OleDbCommand($"SELECT * FROM [{tables[1]}]", connection);
@@ -87,7 +90,7 @@ namespace DataBase.Forms.AddForms
                     return;
                 }
 
-                productCode = Convert.ToInt32(comboBoxProduct.Text.ToString());
+                productCode = Convert.ToInt32(productCodes[comboBoxProduct.SelectedIndex]);
                 productPrice = Convert.ToInt32(textBoxPrice.Text.ToString());
                 productAmount = Convert.ToInt32(textBoxAmount.Text.ToString());
                 orderCode = Guid.Parse(comboBoxOrder.Text.ToString());

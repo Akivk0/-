@@ -38,6 +38,9 @@
             // 
             // dataGridViewQuery
             // 
+            this.dataGridViewQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewQuery.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewQuery.Location = new System.Drawing.Point(200, 18);
@@ -79,7 +82,7 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(18, 18);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(14);
             this.monthCalendar1.MaxSelectionCount = 30;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;

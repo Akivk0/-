@@ -83,7 +83,6 @@ namespace DataBase
                 "выбор всех покупок с датой, попадающей в определенный период",
                 "количество товаров каждого производителя",
                 "количество товаров каждого типа",
-                "выбор всех заказов, содержащих определенный товар",
                 "подсчет общего количества товаров в магазине",
                 "действующие лицензии",
                 "последние поступления товаров за период",
@@ -244,6 +243,41 @@ namespace DataBase
                 finally
                 {
                     connection.Close();
+                }
+
+                switch (activeTable)
+                {
+                    case "Города поставщиков":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Менеджеры поставщиков":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Название поставщиков":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Поставщики":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Производители":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Страны производителей":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Страна поставщика":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Типы товаров":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Клиенты_ купившие оружие":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+                    case "Компании производителей":
+                        mainDataBaseGrid.Columns[0].Visible = false;
+                        break;
+
                 }
 
             }
